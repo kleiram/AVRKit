@@ -16,6 +16,8 @@
 		F6CA79852128835100F2A966 /* StatusRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA79842128835100F2A966 /* StatusRegister.swift */; };
 		F6CA79882128839A00F2A966 /* Bitset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA79872128839A00F2A966 /* Bitset.swift */; };
 		F6CA798B2128843C00F2A966 /* BitsetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA798A2128843C00F2A966 /* BitsetTest.swift */; };
+		F6CA798E2128881700F2A966 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA798D2128881700F2A966 /* Decoder.swift */; };
+		F6CA7991212889D400F2A966 /* DecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA7990212889D400F2A966 /* DecoderTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		F6CA79842128835100F2A966 /* StatusRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRegister.swift; sourceTree = "<group>"; };
 		F6CA79872128839A00F2A966 /* Bitset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitset.swift; sourceTree = "<group>"; };
 		F6CA798A2128843C00F2A966 /* BitsetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsetTest.swift; sourceTree = "<group>"; };
+		F6CA798D2128881700F2A966 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		F6CA7990212889D400F2A966 /* DecoderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			children = (
 				F6CA79862128839200F2A966 /* Util */,
 				F6CA797421286C5600F2A966 /* Device */,
+				F6CA798C2128880900F2A966 /* Decoder */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 			children = (
 				F6CA79892128843200F2A966 /* Util */,
 				F6CA797721286D1900F2A966 /* Device */,
+				F6CA798F212889C700F2A966 /* Decoder */,
 				F6CA797321286C1B00F2A966 /* Resources */,
 			);
 			path = Tests;
@@ -150,6 +156,22 @@
 				F6CA798221287C9F00F2A966 /* MemoryTest.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		F6CA798C2128880900F2A966 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA798D2128881700F2A966 /* Decoder.swift */,
+			);
+			path = Decoder;
+			sourceTree = "<group>";
+		};
+		F6CA798F212889C700F2A966 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA7990212889D400F2A966 /* DecoderTest.swift */,
+			);
+			path = Decoder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +289,7 @@
 				F6CA79852128835100F2A966 /* StatusRegister.swift in Sources */,
 				F6CA797F2128774300F2A966 /* Memory.swift in Sources */,
 				F6CA79882128839A00F2A966 /* Bitset.swift in Sources */,
+				F6CA798E2128881700F2A966 /* Decoder.swift in Sources */,
 				F6CA797621286C5F00F2A966 /* Core.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +300,7 @@
 			files = (
 				F6CA798321287C9F00F2A966 /* MemoryTest.swift in Sources */,
 				F6CA797921286D2300F2A966 /* CoreTest.swift in Sources */,
+				F6CA7991212889D400F2A966 /* DecoderTest.swift in Sources */,
 				F6CA798B2128843C00F2A966 /* BitsetTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
