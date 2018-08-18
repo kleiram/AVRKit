@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		F6CA796221286C0900F2A966 /* AVRKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CA795821286C0900F2A966 /* AVRKit.framework */; };
 		F6CA796921286C0900F2A966 /* AVRKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F6CA795B21286C0900F2A966 /* AVRKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6CA797621286C5F00F2A966 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA797521286C5F00F2A966 /* Core.swift */; };
+		F6CA797921286D2300F2A966 /* CoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA797821286D2300F2A966 /* CoreTest.swift */; };
+		F6CA797F2128774300F2A966 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA797E2128774300F2A966 /* Memory.swift */; };
+		F6CA798321287C9F00F2A966 /* MemoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA798221287C9F00F2A966 /* MemoryTest.swift */; };
+		F6CA79852128835100F2A966 /* StatusRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA79842128835100F2A966 /* StatusRegister.swift */; };
+		F6CA79882128839A00F2A966 /* Bitset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA79872128839A00F2A966 /* Bitset.swift */; };
+		F6CA798B2128843C00F2A966 /* BitsetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA798A2128843C00F2A966 /* BitsetTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +34,13 @@
 		F6CA795C21286C0900F2A966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6CA796121286C0900F2A966 /* AVRKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVRKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CA796821286C0900F2A966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6CA797521286C5F00F2A966 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		F6CA797821286D2300F2A966 /* CoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTest.swift; sourceTree = "<group>"; };
+		F6CA797E2128774300F2A966 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		F6CA798221287C9F00F2A966 /* MemoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTest.swift; sourceTree = "<group>"; };
+		F6CA79842128835100F2A966 /* StatusRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRegister.swift; sourceTree = "<group>"; };
+		F6CA79872128839A00F2A966 /* Bitset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitset.swift; sourceTree = "<group>"; };
+		F6CA798A2128843C00F2A966 /* BitsetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsetTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +84,8 @@
 		F6CA795A21286C0900F2A966 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F6CA79862128839200F2A966 /* Util */,
+				F6CA797421286C5600F2A966 /* Device */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -77,6 +93,8 @@
 		F6CA796521286C0900F2A966 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F6CA79892128843200F2A966 /* Util */,
+				F6CA797721286D1900F2A966 /* Device */,
 				F6CA797321286C1B00F2A966 /* Resources */,
 			);
 			path = Tests;
@@ -97,6 +115,41 @@
 				F6CA796821286C0900F2A966 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F6CA797421286C5600F2A966 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA797521286C5F00F2A966 /* Core.swift */,
+				F6CA79842128835100F2A966 /* StatusRegister.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		F6CA797721286D1900F2A966 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA797821286D2300F2A966 /* CoreTest.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		F6CA79862128839200F2A966 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA79872128839A00F2A966 /* Bitset.swift */,
+				F6CA797E2128774300F2A966 /* Memory.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F6CA79892128843200F2A966 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA798A2128843C00F2A966 /* BitsetTest.swift */,
+				F6CA798221287C9F00F2A966 /* MemoryTest.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,10 +214,12 @@
 				TargetAttributes = {
 					F6CA795721286C0900F2A966 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					F6CA796021286C0900F2A966 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -209,6 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CA79852128835100F2A966 /* StatusRegister.swift in Sources */,
+				F6CA797F2128774300F2A966 /* Memory.swift in Sources */,
+				F6CA79882128839A00F2A966 /* Bitset.swift in Sources */,
+				F6CA797621286C5F00F2A966 /* Core.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CA798321287C9F00F2A966 /* MemoryTest.swift in Sources */,
+				F6CA797921286D2300F2A966 /* CoreTest.swift in Sources */,
+				F6CA798B2128843C00F2A966 /* BitsetTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +407,7 @@
 		F6CA796D21286C0900F2A966 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -359,6 +422,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OpenAVR.AVRKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -366,6 +430,7 @@
 		F6CA796E21286C0900F2A966 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -387,12 +452,15 @@
 		F6CA797021286C0900F2A966 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = OpenAVR.AVRKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -400,6 +468,8 @@
 		F6CA797121286C0900F2A966 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests/Resources/Info.plist;
