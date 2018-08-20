@@ -14,10 +14,13 @@ class CoreTest: XCTestCase {
         self.core.io[1] = UInt8(0xaa)
         self.core.sram[1] = UInt8(0xbb)
         self.core.registers[1] = UInt8(0xcc)
+        self.core.program[1] = UInt16(0xffff)
         
         XCTAssertEqual(self.core.data.data[1], 0xcc)
         XCTAssertEqual(self.core.data.data[33], 0xaa)
         XCTAssertEqual(self.core.data.data[97], 0xbb)
+        XCTAssertEqual(self.core.flash[2], 0xff as UInt8)
+        XCTAssertEqual(self.core.flash[3], 0xff as UInt8)
     }
     
     func testSpecialRegisters() {

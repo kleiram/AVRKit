@@ -27,6 +27,9 @@ class Core {
     /// The status register of the core.
     public var sreg: StatusRegister
     
+    /// The program flashed onto the core.
+    public var program: Program
+    
     /// The size of the program counter of the core.
     public var pcSize: ProgramCounterSize = .Bit16
     
@@ -77,7 +80,8 @@ class Core {
         self.sram = Memory.Proxy(memory: self.data, offset: 96)
         self.registers = Memory.Proxy(memory: self.data, offset: 0)
         
-        self.sreg = StatusRegister(io: io)
-        self.sp   = UInt16(self.data.data.count - 1)
+        self.sreg    = StatusRegister(io: io)
+        self.program = Program(memory: self.flash)
+        self.sp      = UInt16(self.data.data.count - 1)
     }
 }

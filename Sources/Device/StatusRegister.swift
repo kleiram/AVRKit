@@ -47,15 +47,14 @@ class StatusRegister {
         self.io = io
     }
     
-    private subscript(index: Int) -> Bool {
+    subscript(index: Int) -> Bool {
         get {
-            return (Bitset<UInt8>(io[63]))[index]
+            return (io[63] as UInt8)[index]
         }
         set {
-            let bitset = Bitset<UInt8>(io[63])
-            bitset[index] = newValue
-            
-            io[63] = bitset.value
+            var value = io[63] as UInt8
+            value[index] = newValue
+            io[63]       = value
         }
     }
 }

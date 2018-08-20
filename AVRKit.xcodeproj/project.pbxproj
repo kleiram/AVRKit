@@ -14,10 +14,11 @@
 		F6CA797F2128774300F2A966 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA797E2128774300F2A966 /* Memory.swift */; };
 		F6CA798321287C9F00F2A966 /* MemoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA798221287C9F00F2A966 /* MemoryTest.swift */; };
 		F6CA79852128835100F2A966 /* StatusRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA79842128835100F2A966 /* StatusRegister.swift */; };
-		F6CA79882128839A00F2A966 /* Bitset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA79872128839A00F2A966 /* Bitset.swift */; };
-		F6CA798B2128843C00F2A966 /* BitsetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA798A2128843C00F2A966 /* BitsetTest.swift */; };
+		F6CA798B2128843C00F2A966 /* FixedWidthIntegerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA798A2128843C00F2A966 /* FixedWidthIntegerTest.swift */; };
 		F6CA798E2128881700F2A966 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA798D2128881700F2A966 /* Decoder.swift */; };
 		F6CA7991212889D400F2A966 /* DecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA7990212889D400F2A966 /* DecoderTest.swift */; };
+		F6CA79932128A27400F2A966 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA79922128A27400F2A966 /* Program.swift */; };
+		F6CA7995212AC7AE00F2A966 /* FixedWidthInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA7994212AC7AE00F2A966 /* FixedWidthInteger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +42,11 @@
 		F6CA797E2128774300F2A966 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		F6CA798221287C9F00F2A966 /* MemoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTest.swift; sourceTree = "<group>"; };
 		F6CA79842128835100F2A966 /* StatusRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRegister.swift; sourceTree = "<group>"; };
-		F6CA79872128839A00F2A966 /* Bitset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitset.swift; sourceTree = "<group>"; };
-		F6CA798A2128843C00F2A966 /* BitsetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsetTest.swift; sourceTree = "<group>"; };
+		F6CA798A2128843C00F2A966 /* FixedWidthIntegerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedWidthIntegerTest.swift; sourceTree = "<group>"; };
 		F6CA798D2128881700F2A966 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		F6CA7990212889D400F2A966 /* DecoderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderTest.swift; sourceTree = "<group>"; };
+		F6CA79922128A27400F2A966 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		F6CA7994212AC7AE00F2A966 /* FixedWidthInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedWidthInteger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +145,9 @@
 		F6CA79862128839200F2A966 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				F6CA79872128839A00F2A966 /* Bitset.swift */,
 				F6CA797E2128774300F2A966 /* Memory.swift */,
+				F6CA79922128A27400F2A966 /* Program.swift */,
+				F6CA7994212AC7AE00F2A966 /* FixedWidthInteger.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -152,7 +155,7 @@
 		F6CA79892128843200F2A966 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				F6CA798A2128843C00F2A966 /* BitsetTest.swift */,
+				F6CA798A2128843C00F2A966 /* FixedWidthIntegerTest.swift */,
 				F6CA798221287C9F00F2A966 /* MemoryTest.swift */,
 			);
 			path = Util;
@@ -288,8 +291,9 @@
 			files = (
 				F6CA79852128835100F2A966 /* StatusRegister.swift in Sources */,
 				F6CA797F2128774300F2A966 /* Memory.swift in Sources */,
-				F6CA79882128839A00F2A966 /* Bitset.swift in Sources */,
+				F6CA79932128A27400F2A966 /* Program.swift in Sources */,
 				F6CA798E2128881700F2A966 /* Decoder.swift in Sources */,
+				F6CA7995212AC7AE00F2A966 /* FixedWidthInteger.swift in Sources */,
 				F6CA797621286C5F00F2A966 /* Core.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +305,7 @@
 				F6CA798321287C9F00F2A966 /* MemoryTest.swift in Sources */,
 				F6CA797921286D2300F2A966 /* CoreTest.swift in Sources */,
 				F6CA7991212889D400F2A966 /* DecoderTest.swift in Sources */,
-				F6CA798B2128843C00F2A966 /* BitsetTest.swift in Sources */,
+				F6CA798B2128843C00F2A966 /* FixedWidthIntegerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +447,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=250 -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = OpenAVR.AVRKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -466,6 +471,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=250 -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = OpenAVR.AVRKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
