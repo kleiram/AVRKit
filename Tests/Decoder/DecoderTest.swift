@@ -491,6 +491,42 @@ class DecoderTest: XCTestCase {
         XCTAssertEqual(core.pc, 13)
     }
     
+    func testCp() {
+        core.registers[0] = 0xff as UInt8
+        core.registers[1] = 0xfe as UInt8
+        decoder.decode(opcode: 0x1401, core: core)
+        XCTAssertFalse(core.sreg.z)
+        
+        core.registers[0] = 0xff as UInt8
+        core.registers[1] = 0xff as UInt8
+        decoder.decode(opcode: 0x1401, core: core)
+        XCTAssertTrue(core.sreg.z)
+    }
+    
+    func testCpc() {
+        core.sreg.c       = false
+        core.registers[0] = 0xff as UInt8
+        core.registers[1] = 0xfe as UInt8
+        decoder.decode(opcode: 0x0401, core: core)
+        XCTAssertFalse(core.sreg.z)
+        
+        core.sreg.c       = true
+        core.registers[0] = 0xff as UInt8
+        core.registers[1] = 0xfe as UInt8
+        decoder.decode(opcode: 0x0401, core: core)
+        XCTAssertTrue(core.sreg.z)
+    }
+    
+    func testCpi() {
+        core.registers[16] = 0xff as UInt8
+        decoder.decode(opcode: 0x3f0e, core: core)
+        XCTAssertFalse(core.sreg.z)
+        
+        core.registers[16] = 0xff as UInt8
+        decoder.decode(opcode: 0x3f0f, core: core)
+        XCTAssertTrue(core.sreg.z)
+    }
+    
     func testSbrc() {
         core.pc           = 5
         core.registers[0] = 0xff as UInt8

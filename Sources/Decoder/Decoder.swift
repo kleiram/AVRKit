@@ -26,7 +26,12 @@ class Decoder {
         let Rr = core.registers[r] as UInt8
         let R  = Rd &+ Rr &+ (core.sreg.c ? 1 : 0)
 
-        // TODO: Update status register
+        core.sreg.c = (Rd[7] && Rr[7]) || (Rr[7] && !R[7]) || (R[7] && !Rd[7])
+        core.sreg.c = (Rd[3] && Rr[3]) || (Rr[3] && !R[3]) || (R[3] && !Rd[3])
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = (Rd[7] && Rr[7] && !R[7]) || (!Rd[7] && !Rr[7] && R[7])
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -40,7 +45,12 @@ class Decoder {
         let Rr = core.registers[r] as UInt8
         let R  = Rd &+ Rr
 
-        // TODO: Update status register
+        core.sreg.c = (Rd[7] && Rr[7]) || (Rr[7] && !R[7]) || (R[7] && !Rd[7])
+        core.sreg.c = (Rd[3] && Rr[3]) || (Rr[3] && !R[3]) || (R[3] && !Rd[3])
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = (Rd[7] && Rr[7] && !R[7]) || (!Rd[7] && !Rr[7] && R[7])
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -53,7 +63,11 @@ class Decoder {
         let Rd = core.registers[d] as UInt16
         let R  = Rd &+ K
 
-        // TODO: Update status register
+        core.sreg.c = !R[15] && Rd[15]
+        core.sreg.z = R == 0
+        core.sreg.n = R[15]
+        core.sreg.v = !Rd[15] && R[15]
+        core.sreg.s = core.sreg.v != core.sreg.n
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -67,7 +81,12 @@ class Decoder {
         let Rr = core.registers[r] as UInt8
         let R  = Rd &- Rr
 
-        // TODO: Update status register
+        core.sreg.c = (!Rd[7] && Rr[7]) || (Rr[7] && R[7]) || (!Rd[7] && R[7])
+        core.sreg.h = (!Rd[3] && Rr[3]) || (Rr[3] && R[3]) || (!Rd[3] && R[3])
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = (Rd[7] && !Rr[7] && !R[7]) || (!Rd[7] && Rr[7] && R[7])
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -80,7 +99,12 @@ class Decoder {
         let Rd = core.registers[d] as UInt16
         let R  = Rd &- K
 
-        // TODO: Update status register
+        core.sreg.c = (!Rd[7] && K[7]) || (K[7] && R[7]) || (!Rd[7] && R[7])
+        core.sreg.h = (!Rd[3] && K[3]) || (K[3] && R[3]) || (!Rd[3] && R[3])
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = (Rd[7] && !K[7] && !R[7]) || (!Rd[7] && K[7] && R[7])
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -94,7 +118,12 @@ class Decoder {
         let Rr = core.registers[r] as UInt8
         let R  = Rd &- Rr &- (core.sreg.c ? 1 : 0)
 
-        // TODO: Update status register
+        core.sreg.c = (!Rd[7] && Rr[7]) || (Rr[7] && R[7]) || (!Rd[7] && R[7])
+        core.sreg.h = (!Rd[3] && Rr[3]) || (Rr[3] && R[3]) || (!Rd[3] && R[3])
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = (Rd[7] && !Rr[7] && !R[7]) || (!Rd[7] && Rr[7] && R[7])
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -107,7 +136,12 @@ class Decoder {
         let Rd = core.registers[d] as UInt16
         let R  = Rd &- K &- (core.sreg.c ? 1 : 0)
 
-        // TODO: Update status register
+        core.sreg.c = (!Rd[7] && K[7]) || (K[7] && R[7]) || (!Rd[7] && R[7])
+        core.sreg.h = (!Rd[3] && K[3]) || (K[3] && R[3]) || (!Rd[3] && R[3])
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = (Rd[7] && !K[7] && !R[7]) || (!Rd[7] && K[7] && R[7])
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -120,7 +154,11 @@ class Decoder {
         let Rd = core.registers[d] as UInt16
         let R  = Rd &- K
 
-        // TODO: Update status register
+        core.sreg.c = R[15] && !Rd[15]
+        core.sreg.z = R == 0
+        core.sreg.n = R[15]
+        core.sreg.v = R[15] && !Rd[15]
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -134,7 +172,10 @@ class Decoder {
         let Rr = core.registers[r] as UInt8
         let R  = Rd & Rr
 
-        // TODO: Update status register
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = false
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -147,7 +188,10 @@ class Decoder {
         let Rd = core.registers[d] as UInt16
         let R  = Rd & K
 
-        // TODO: Update status register
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = false
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -161,7 +205,10 @@ class Decoder {
         let Rr = core.registers[r] as UInt8
         let R  = Rd | Rr
 
-        // TODO: Update status register
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = false
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -174,7 +221,10 @@ class Decoder {
         let Rd = core.registers[d] as UInt16
         let R  = Rd | K
 
-        // TODO: Update status register
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = false
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -188,7 +238,10 @@ class Decoder {
         let Rr = core.registers[r] as UInt8
         let R  = Rd ^ Rr
 
-        // TODO: Update status register
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = false
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -200,7 +253,11 @@ class Decoder {
         let Rd = core.registers[d] as UInt8
         let R  = 0xff &- Rd
 
-        // TODO: Update status register
+        core.sreg.c = true
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = false
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -212,7 +269,12 @@ class Decoder {
         let Rd = core.registers[d] as UInt8
         let R  = 0 &- Rd
 
-        // TODO: Update status register
+        core.sreg.c = R != 0
+        core.sreg.h = R[3] && !Rd[3]
+        core.sreg.v = R == 0x80
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -224,7 +286,10 @@ class Decoder {
         let Rd = core.registers[d] as UInt8
         let R  = Rd &+ 1
 
-        // TODO: Update status register
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = R == 0x80
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -236,7 +301,10 @@ class Decoder {
         let Rd = core.registers[d] as UInt8
         let R  = Rd &- 1
 
-        // TODO: Update status register
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = R == 0x7f
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -257,7 +325,8 @@ class Decoder {
         let Rr = core.registers[r] as UInt8
         let R  = UInt16(Rd) &* UInt16(Rr)
 
-        // TODO: Update status register
+        core.sreg.c = R[15]
+        core.sreg.z = R == 0
 
         core.registers[0] = R
         core.pc           = core.pc + 1
@@ -271,7 +340,8 @@ class Decoder {
         let Rr = Int8(bitPattern: core.registers[r] as UInt8)
         let R  = Int16(Rd) &* Int16(Rr)
 
-        // TODO: Update status register
+        core.sreg.c = R[15]
+        core.sreg.z = R == 0
 
         core.registers[0] = UInt16(bitPattern: R)
         core.pc           = core.pc + 1
@@ -285,7 +355,8 @@ class Decoder {
         let Rr = core.registers[r] as UInt8
         let R  = Int16(Rd) &* Int16(bitPattern: UInt16(Rr))
 
-        // TODO: Update status register
+        core.sreg.c = R[15]
+        core.sreg.z = R == 0
 
         core.registers[0] = UInt16(bitPattern: R)
         core.pc           = core.pc + 1
@@ -648,19 +719,54 @@ class Decoder {
     }
 
     private func _cp(opcode: UInt16, core: Core) {
-        // TODO: Implement instruction
-
+        let d = Int(opcode.mask(0x01f0))
+        let r = Int(opcode.mask(0x020f))
+        
+        let Rd = core.registers[d] as UInt8
+        let Rr = core.registers[r] as UInt8
+        let R  = Rd &- Rr
+        
+        core.sreg.c = (!Rd[7] && Rr[7]) || (Rr[7] && R[7]) || (R[7] && !Rd[7])
+        core.sreg.h = (!Rd[3] && Rr[3]) || (Rr[3] && R[3]) || (R[3] && !Rd[3])
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = (Rd[7] && !Rr[7] && !R[7]) || (!Rd[7] && Rr[7] && R[7])
+        core.sreg.s = core.sreg.n != core.sreg.v
+        
         core.pc = core.pc + 1
     }
 
     private func _cpc(opcode: UInt16, core: Core) {
-        // TODO: Implement instruction
+        let d = Int(opcode.mask(0x01f0))
+        let r = Int(opcode.mask(0x020f))
+        
+        let Rd = core.registers[d] as UInt8
+        let Rr = core.registers[r] as UInt8
+        let R  = Rd &- Rr &- (core.sreg.c ? 1 : 0)
+        
+        core.sreg.c = (!Rd[7] && Rr[7]) || (Rr[7] && R[7]) || (R[7] && !Rd[7])
+        core.sreg.h = (!Rd[3] && Rr[3]) || (Rr[3] && R[3]) || (R[3] && !Rd[3])
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = (Rd[7] && !Rr[7] && !R[7]) || (!Rd[7] && Rr[7] && R[7])
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.pc = core.pc + 1
     }
 
     private func _cpi(opcode: UInt16, core: Core) {
-        // TODO: Implement instruction
+        let d = Int(opcode.mask(0x00f0)) + 16
+        let K = UInt8(opcode.mask(0x0f0f))
+        
+        let Rd = core.registers[d] as UInt8
+        let R  = Rd &- K
+        
+        core.sreg.c = (!Rd[7] && K[7]) || (K[7] && R[7]) || (R[7] && !Rd[7])
+        core.sreg.h = (!Rd[3] && K[3]) || (K[3] && R[3]) || (R[3] && !Rd[3])
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = (Rd[7] && !K[7] && !R[7]) || (!Rd[7] && K[7] && R[7])
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.pc = core.pc + 1
     }
@@ -734,7 +840,11 @@ class Decoder {
         let Rd = core.registers[d] as UInt8
         let R  = Rd >> 1
         
-        // TODO: Update status register
+        core.sreg.c = Rd[0]
+        core.sreg.z = R == 0
+        core.sreg.n = false
+        core.sreg.v = core.sreg.n != core.sreg.c
+        core.sreg.s = core.sreg.n != core.sreg.v
         
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -745,7 +855,11 @@ class Decoder {
         let Rd = core.registers[d] as UInt8
         let R  = Rd >> 1 | (core.sreg.c ? 0x80 : 0x00)
         
-        // TODO: Update status register
+        core.sreg.c = Rd[0]
+        core.sreg.z = R == 0
+        core.sreg.n = false
+        core.sreg.v = core.sreg.n != core.sreg.c
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
@@ -756,7 +870,11 @@ class Decoder {
         let Rd = core.registers[d] as UInt8
         let R  = Rd >> 1 | (Rd[7] ? 0x80 : 0x00)
         
-        // TODO: Update status register
+        core.sreg.c = Rd[0]
+        core.sreg.z = R == 0
+        core.sreg.n = R[7]
+        core.sreg.v = core.sreg.n != core.sreg.c
+        core.sreg.s = core.sreg.n != core.sreg.v
 
         core.registers[d] = R
         core.pc           = core.pc + 1
