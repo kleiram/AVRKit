@@ -22,6 +22,7 @@
 		F6CA7998212B174400F2A966 /* HexLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA7997212B174400F2A966 /* HexLoader.swift */; };
 		F6CA799C212B17AE00F2A966 /* Test.hex in Resources */ = {isa = PBXBuildFile; fileRef = F6CA799A212B179200F2A966 /* Test.hex */; };
 		F6CA799F212B17D800F2A966 /* HexLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA799E212B17D800F2A966 /* HexLoaderTest.swift */; };
+		F6CA79A2212C2C5700F2A966 /* BasicIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA79A1212C2C5700F2A966 /* BasicIntegrationTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F6CA7997212B174400F2A966 /* HexLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexLoader.swift; sourceTree = "<group>"; };
 		F6CA799A212B179200F2A966 /* Test.hex */ = {isa = PBXFileReference; lastKnownFileType = text; path = Test.hex; sourceTree = "<group>"; };
 		F6CA799E212B17D800F2A966 /* HexLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexLoaderTest.swift; sourceTree = "<group>"; };
+		F6CA79A1212C2C5700F2A966 /* BasicIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicIntegrationTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		F6CA796521286C0900F2A966 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F6CA79A0212C2C4100F2A966 /* Integration */,
 				F6CA797721286D1900F2A966 /* Device */,
 				F6CA799D212B17BD00F2A966 /* Loader */,
 				F6CA798F212889C700F2A966 /* Decoder */,
@@ -208,6 +211,14 @@
 				F6CA799E212B17D800F2A966 /* HexLoaderTest.swift */,
 			);
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		F6CA79A0212C2C4100F2A966 /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA79A1212C2C5700F2A966 /* BasicIntegrationTest.swift */,
+			);
+			path = Integration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +351,7 @@
 				F6CA799F212B17D800F2A966 /* HexLoaderTest.swift in Sources */,
 				F6CA798321287C9F00F2A966 /* MemoryTest.swift in Sources */,
 				F6CA797921286D2300F2A966 /* CoreTest.swift in Sources */,
+				F6CA79A2212C2C5700F2A966 /* BasicIntegrationTest.swift in Sources */,
 				F6CA7991212889D400F2A966 /* DecoderTest.swift in Sources */,
 				F6CA798B2128843C00F2A966 /* FixedWidthIntegerTest.swift in Sources */,
 			);
