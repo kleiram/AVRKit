@@ -707,4 +707,16 @@ class DecoderTest: XCTestCase {
         decoder.decode(opcode: 0x94f8, core: core)
         XCTAssertFalse(core.sreg.i)
     }
+    
+    // MARK: MCU Control
+    
+    func testBreak() {
+        decoder.decode(opcode: 0x9598, core: core)
+        XCTAssertEqual(core.state, .Stopped)
+    }
+    
+    func testSleep() {
+        decoder.decode(opcode: 0x9588, core: core)
+        XCTAssertEqual(core.state, .Sleeping)
+    }
 }

@@ -1,6 +1,12 @@
 import Foundation
 
 class Core {
+    enum DeviceState {
+        case Stopped
+        case Running
+        case Sleeping
+    }
+    
     enum ProgramCounterSize {
         case Bit16
         case Bit22
@@ -32,6 +38,8 @@ class Core {
     
     /// The size of the program counter of the core.
     public var pcSize: ProgramCounterSize = .Bit16
+    
+    public var state: DeviceState = .Running
     
     /// The special X-register of the core.
     public var x: UInt16 {

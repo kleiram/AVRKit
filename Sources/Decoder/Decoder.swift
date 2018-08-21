@@ -946,15 +946,13 @@ class Decoder {
     // MARK: MCU Control
 
     private func _break(opcode: UInt16, core: Core) {
-        // TODO: Implement instruction
-
-        core.pc = core.pc + 1
+        core.state = .Stopped
+        core.pc    = core.pc + 1
     }
 
     private func _sleep(opcode: UInt16, core: Core) {
-        // TODO: Implement instruction
-
-        core.pc = core.pc + 1
+        core.state = .Sleeping
+        core.pc    = core.pc + 1
     }
 
     private func _wdr(opcode: UInt16, core: Core) {
@@ -964,8 +962,6 @@ class Decoder {
     }
 
     private func _nop(_: UInt16, core: Core) {
-        // TODO: Implement instruction
-
         core.pc = core.pc + 1
     }
 
