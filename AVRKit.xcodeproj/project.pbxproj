@@ -19,6 +19,9 @@
 		F6CA7991212889D400F2A966 /* DecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA7990212889D400F2A966 /* DecoderTest.swift */; };
 		F6CA79932128A27400F2A966 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA79922128A27400F2A966 /* Program.swift */; };
 		F6CA7995212AC7AE00F2A966 /* FixedWidthInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA7994212AC7AE00F2A966 /* FixedWidthInteger.swift */; };
+		F6CA7998212B174400F2A966 /* HexLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA7997212B174400F2A966 /* HexLoader.swift */; };
+		F6CA799C212B17AE00F2A966 /* Test.hex in Resources */ = {isa = PBXBuildFile; fileRef = F6CA799A212B179200F2A966 /* Test.hex */; };
+		F6CA799F212B17D800F2A966 /* HexLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA799E212B17D800F2A966 /* HexLoaderTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		F6CA7990212889D400F2A966 /* DecoderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderTest.swift; sourceTree = "<group>"; };
 		F6CA79922128A27400F2A966 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		F6CA7994212AC7AE00F2A966 /* FixedWidthInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedWidthInteger.swift; sourceTree = "<group>"; };
+		F6CA7997212B174400F2A966 /* HexLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexLoader.swift; sourceTree = "<group>"; };
+		F6CA799A212B179200F2A966 /* Test.hex */ = {isa = PBXFileReference; lastKnownFileType = text; path = Test.hex; sourceTree = "<group>"; };
+		F6CA799E212B17D800F2A966 /* HexLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexLoaderTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +96,10 @@
 		F6CA795A21286C0900F2A966 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F6CA79862128839200F2A966 /* Util */,
 				F6CA797421286C5600F2A966 /* Device */,
+				F6CA7996212B173800F2A966 /* Loader */,
 				F6CA798C2128880900F2A966 /* Decoder */,
+				F6CA79862128839200F2A966 /* Util */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -100,9 +107,10 @@
 		F6CA796521286C0900F2A966 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F6CA79892128843200F2A966 /* Util */,
 				F6CA797721286D1900F2A966 /* Device */,
+				F6CA799D212B17BD00F2A966 /* Loader */,
 				F6CA798F212889C700F2A966 /* Decoder */,
+				F6CA79892128843200F2A966 /* Util */,
 				F6CA797321286C1B00F2A966 /* Resources */,
 			);
 			path = Tests;
@@ -120,6 +128,7 @@
 		F6CA797321286C1B00F2A966 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F6CA7999212B178700F2A966 /* Fixtures */,
 				F6CA796821286C0900F2A966 /* Info.plist */,
 			);
 			path = Resources;
@@ -175,6 +184,30 @@
 				F6CA7990212889D400F2A966 /* DecoderTest.swift */,
 			);
 			path = Decoder;
+			sourceTree = "<group>";
+		};
+		F6CA7996212B173800F2A966 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA7997212B174400F2A966 /* HexLoader.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		F6CA7999212B178700F2A966 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA799A212B179200F2A966 /* Test.hex */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		F6CA799D212B17BD00F2A966 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA799E212B17D800F2A966 /* HexLoaderTest.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CA799C212B17AE00F2A966 /* Test.hex in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +329,7 @@
 				F6CA798E2128881700F2A966 /* Decoder.swift in Sources */,
 				F6CA7995212AC7AE00F2A966 /* FixedWidthInteger.swift in Sources */,
 				F6CA797621286C5F00F2A966 /* Core.swift in Sources */,
+				F6CA7998212B174400F2A966 /* HexLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CA799F212B17D800F2A966 /* HexLoaderTest.swift in Sources */,
 				F6CA798321287C9F00F2A966 /* MemoryTest.swift in Sources */,
 				F6CA797921286D2300F2A966 /* CoreTest.swift in Sources */,
 				F6CA7991212889D400F2A966 /* DecoderTest.swift in Sources */,
